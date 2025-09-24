@@ -38,3 +38,13 @@ void setup() {
   Wire.begin();
   lightMeter.begin();
 }
+
+void loop() {
+  char buf[20];
+  String strLuxValue = String( lightMeter.readLightLevel() );
+  strLuxValue.toCharArray(buf, strLuxValue.length() );
+  
+  client.publish(topic, buf);
+  Serial.println(String(topic) + " : " + buf);
+  delay(2000);
+}
