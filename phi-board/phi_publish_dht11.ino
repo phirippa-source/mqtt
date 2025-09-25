@@ -14,8 +14,8 @@ const char* password = "12345678";
 const char* userId = "phirippa";
 const char* userPw = "1234";
 const char* clientId = userId;
-char *topic_t = “Sensors/MyOffice/Indoor/Temp";
-char *topic_h = “Sensors/MyOffice/Indoor/Humi";
+char *topic_t = "MyOffice/Indoor/Temp";
+char *topic_h = "MyOffice/Indoor/Humi";
 char* server = "192.168.1.12"; 
 
 WiFiClient wifiClient; 
