@@ -18,7 +18,8 @@ void setup() {
   
   // 공유기로부터 할당 받은 "(사설)IP 주소" 출력
   Serial.print("Local IP address : ");
-  Serial.println(WiFi.localIP());}
+  Serial.println(WiFi.localIP());
+}
 
 void loop() {
 }
