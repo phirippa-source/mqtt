@@ -27,7 +27,7 @@ void setup() {
     Serial.print("*");
     delay(1000);
   }
-  Serial.println("\nConnected to broker");
+  Serial.println("Connected to broker");
 }
 
 void loop() {}
