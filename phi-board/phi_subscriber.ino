@@ -12,7 +12,7 @@ char* server = "192.168.1.12";
 char messageBuf[100];
 
 void callback(char* topic, byte* payload, unsigned int length) {  
-  Serial.println("Message arrived!\nTtopic: " + String(topic));
+  Serial.println("Message arrived!\nTopic: " + String(topic));
   Serial.println("Length: "+ String(length, DEC));
   
   strncpy(messageBuf, (char*)payload, length);
