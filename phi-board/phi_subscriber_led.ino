@@ -4,7 +4,7 @@
 const char* ssid = "RiatechChief_2G";
 const char* password = "12345678";
 
-const char* userId = “mqtt_phirippa";
+const char* userId = "mqtt_phirippa";
 const char* userPw = "1234";
 const char* clientId = userId;
 char *topic = “Sensors/MyOffice/Indoor/Lamp";
@@ -18,9 +18,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
   messageBuf[length] = '\0';
   String ledState = String(messageBuf);
   Serial.println("Payload: "+ ledState + "\n\n");
-  if( ledState == "1"  ){      digitalWrite(USER_LED, LOW);
-  } else if (ledState == "0") { digitalWrite(USER_LED, HIGH);
-  } else {                      Serial.println("Wrong Message"); }
+  if( ledState == "1" ){      
+    digitalWrite(USER_LED, LOW);
+  } else if (ledState == "0") { 
+    digitalWrite(USER_LED, HIGH);
+  } else {  
+    Serial.println("Wrong Message"); }
 }
 
 WiFiClient wifiClient; 
