@@ -1,13 +1,13 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "RiatechChief_2G";
+const char* ssid = "Ria2G";
 const char* password = "12345678";
 
 const char* clientId = "phirippa";
 const char* userId = clientId;
 const char* userPw = "1234";
-char *topic = “Sensors/MyOffice/Indoor/#";
+char *topic = "<name>/Led";
 char* server = "192.168.1.12"; 
 char messageBuf[100];
 
