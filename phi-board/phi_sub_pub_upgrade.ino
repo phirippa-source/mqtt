@@ -9,12 +9,12 @@ BH1750 lightMeter;
 const char* ssid = "RiatechChief_2G";
 const char* password = "12345678";
 
-const char* userId = “mqtt_phirippa";
+const char* userId = "mqtt_phirippa";
 const char* userPw = "1234";
 const char* clientId = userId;
 
-char *topicSub = “Sensors/MyOffice/Indoor/lamp";
-char *topicPub = “Sensors/MyOffice/Indoor/Lux";
+char *topicSub = "MyOffice/Indoor/lamp";
+char *topicPub = "MyOffice/Indoor/Lux";
 
 char* server = "192.168.1.12"; 
 char messageBuf[100];
@@ -28,9 +28,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
   String ledState = String(messageBuf);
   Serial.println("Payload: "+ ledState + "\n\n");
 
-  if( ledState == “1"  ){      
+  if( ledState == "1"  ){      
     digitalWrite(USER_LED, LOW);
-  } else if (ledState==“0") { 
+  } else if (ledState == "0") { 
     digitalWrite(USER_LED, HIGH);
   } else { 
     Serial.println("Wrong Message");
