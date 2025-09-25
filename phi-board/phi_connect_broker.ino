@@ -21,7 +21,7 @@ void setup() {
   }
   Serial.println("\nWiFi Connected");
   Serial.print("Local IP address : ");
-  Serial.println(WiFi.localIP());  
+  Serial.println(WiFi.localIP());  
   Serial.println("Connecting to broker");
   while ( !client.connect(clientId, userId, userPw) ){ 
     Serial.print(“*");
