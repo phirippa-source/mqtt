@@ -18,8 +18,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
   messageBuf[length] = '\0';
   String ledState = String(messageBuf);
   Serial.println("Payload: "+ ledState + "\n\n");
-  if( ledState == “1"  ){      digitalWrite(USER_LED, LOW);
-  } else if (ledState==“0") { digitalWrite(USER_LED, HIGH);
+  if( ledState == "1"  ){      digitalWrite(USER_LED, LOW);
+  } else if (ledState == "0") { digitalWrite(USER_LED, HIGH);
   } else {                      Serial.println("Wrong Message"); }
 }
 
@@ -44,4 +44,6 @@ void setup() {
   client.subscribe(topic);
  }
 
-void loop() {   client.loop(); }
+void loop() {   
+  client.loop(); 
+}
