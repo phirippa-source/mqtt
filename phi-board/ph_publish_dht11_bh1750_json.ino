@@ -15,7 +15,7 @@ const char* serverIPAddr = "192.168.0.6";   // MQTT Broker가 실행 중인 컴�
 const char* userId = "ship";                // MQTT Broker에 접속하기 위한 id와 password
 const char* userPw = "1234";
 const char* clientId = "1234xx2312";        // Client ID는 Broker에 접속한 클라이언트를 구분하기 위한 id. 유니크해야 함.
-const char *topic = "MyOffice/Indoor/Value";
+const char* topic = "MyOffice/Indoor/Value";
 const int PAYLOADSIZE = 128;
 
 void setup() {
@@ -51,7 +51,6 @@ void loop() {
                   +",\"Lux\":"   + String(lux, 1) + "}";
   sPayload.toCharArray(payload, PAYLOADSIZE);
   client.publish(topic, payload);
-  Serial.print(String(topic) + " "); 
-  Serial.println(payload);
-  delay(1000);
+  Serial.println( String(topic) + " : " + String(payload) ); 
+    delay(1000);
 }
