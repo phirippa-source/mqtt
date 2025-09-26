@@ -34,7 +34,7 @@ void setup() {
   while ( !client.connect(clientId, userId, userPw) ){ 
     Serial.print("*"); delay(500);
   }
-  Serial.println("\nConnected to broker!!!");
+  Serial.println("\nConnected to broker!!!\n");
 }
 
 void loop() {
