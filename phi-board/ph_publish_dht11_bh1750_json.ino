@@ -1,4 +1,4 @@
-#include <WiFi.h>
+#include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include "DHT.h"
 #include <Wire.h>
@@ -6,15 +6,15 @@
 
 #define DHTPIN D4
 #define DHTTYPE DHT11
-
 DHT dht(DHTPIN, DHTTYPE);
 BH1750 lightMeter;
+
 const char* ssid = "Ria2G";
 const char* password = "730124go";
-const char* serverIPAddr = "192.168.0.6";
-const char* userId = "ship";
+const char* serverIPAddr = "192.168.0.6";   // MQTT Broker가 실행 중인 컴퓨터의 IP address
+const char* userId = "ship";                // MQTT Broker에 접속하기 위한 id와 password
 const char* userPw = "1234";
-const char* clientId = "1234xx";
+const char* clientId = "1234xx2312";            // 
 const char *topic = "MyOffice/Indoor/Value";
 const int PAYLOADSIZE = 128;
 
@@ -42,7 +42,8 @@ void loop() {
   float h = dht.readHumidity();
   float t = dht.readTemperature();
   if (isnan(h) || isnan(t) ) {
-    Serial.println("Failed to read from DHT sensor!");  return;
+    Serial.println("Failed to read from DHT sensor!");  
+    return;
   }
   float lux = lightMeter.readLightLevel();
   String sPayload = "{\"Temp\":" + String(t, 1)
